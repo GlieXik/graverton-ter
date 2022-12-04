@@ -1,0 +1,25 @@
+@import "./utils/vars";
+@import "./utils/hidden";
+@import "./utils/mixins";
+
+@import "./base/_common.scss";
+@import "./base/reset";
+
+@import "./components/container";
+
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/navigation";
+
+@import "./pages/index/hero";
+
+//  ready
+@import "./pages/index/about";
+@import "./pages/admin/admin";
+
+@import "./pages/index/about-after";
+@import "./pages/index/team";
+@import "./pages/index/customers";
+@import "./components/modal";
+@import "./pages/portfolio/side-menu";
+@import "./pages/portfolio/item-section";
