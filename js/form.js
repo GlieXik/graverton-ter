@@ -1,6 +1,10 @@
 const form = document.querySelector(".modal-form");
 
-const handleSubmit = (event) => {
+function toggleModal() {
+  refs.modal.classList.toggle("is-hidden");
+}
+
+const handleSubmit = async (event) => {
   event.preventDefault();
   const {
     elements: { userName, userTel, userEmail, comment, modalCheckbox },
@@ -14,9 +18,11 @@ const handleSubmit = (event) => {
     confirmation: modalCheckbox.checked,
   };
 
-  axios
+  await axios
     .post("https://graverton-ter.onrender.com", formData)
-    .catch((e) => console.error(e));
+
+    .catch((e) => console.error(e))
+    .finally(toggleModal());
 };
 
 form.addEventListener("submit", handleSubmit);

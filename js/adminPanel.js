@@ -4,7 +4,6 @@ const socket = io("https://graverton-ter.onrender.com", {
 
 axios.defaults.baseURL = "https://graverton-ter.onrender.com";
 const order = (data) => {
-  console.log(data, "orede func");
   const maping = data
     .map(({ _id: id, name, phone, email, comment, status }) => {
       const checkStatus = status ? "checked" : "";
@@ -54,13 +53,13 @@ var orderList;
 socket.on("start", (data) => {
   console.log("connect", data);
   orderList = data;
-  orderList;
-  order(orderList);
+
+  order(orderList.reverse());
 });
 socket.on("change", (data) => {
   console.log("change", data);
   orderList = data;
-  order(orderList);
+  order(orderList.reverse());
 });
 
 const container = document.getElementById("orders");

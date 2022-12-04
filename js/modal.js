@@ -7,9 +7,7 @@ const refs = {
 refs.openModalBtn.addEventListener("click", toggleModal);
 refs.closeModalBtn.addEventListener("click", toggleModal);
 const backdrop = (event) => {
-  console.log(event.currentTarget, "--", event.target);
   if (event.currentTarget === event.target) {
-    console.log("fsf");
     toggleModal();
   }
 };
