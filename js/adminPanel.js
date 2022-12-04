@@ -1,6 +1,8 @@
-const socket = io("http://localhost:3000/", { transports: ["websocket"] });
+const socket = io("https://graverton-ter.onrender.com", {
+  transports: ["websocket"],
+});
 
-axios.defaults.baseURL = "http://localhost:3000/";
+axios.defaults.baseURL = "https://graverton-ter.onrender.com";
 const order = (data) => {
   console.log(data, "orede func");
   const maping = data
