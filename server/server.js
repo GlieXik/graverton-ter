@@ -1,14 +1,13 @@
 const app = require("./app");
 
 const mongoose = require("mongoose");
-
+const PORT = process.env.PORT || 3000;
 const connectionDb = mongoose.connect(process.env.HOST);
 
 connectionDb
   .then(() => {
-
-    app.listen(3000, () => {
-      console.log("Server running. Use our API on port: 3000");
+    app.listen(PORT, () => {
+      console.log(`Server running. Use our API on port: ${PORT}`);
     });
   })
   .catch((error) => {
