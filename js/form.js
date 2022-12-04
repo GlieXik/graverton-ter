@@ -14,7 +14,9 @@ const handleSubmit = (event) => {
     confirmation: modalCheckbox.checked,
   };
 
-  axios.post("http://localhost:3000", formData).catch((e) => console.error(e));
+  axios
+    .post("https://graverton-ter.onrender.com", formData)
+    .catch((e) => console.error(e));
 };
 
 form.addEventListener("submit", handleSubmit);
