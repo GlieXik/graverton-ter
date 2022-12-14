@@ -7,7 +7,7 @@ function toggleModal() {
 const handleSubmit = async (event) => {
   event.preventDefault();
   const {
-    elements: { userName, userTel, userEmail, comment, modalCheckbox },
+    elements: { userName, userTel, userEmail, comment },
   } = event.currentTarget;
 
   const formData = {
@@ -15,7 +15,6 @@ const handleSubmit = async (event) => {
     phone: userTel.value,
     email: userEmail.value,
     comment: comment.value,
-    confirmation: modalCheckbox.checked,
   };
 
   await axios
